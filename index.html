@@ -3,181 +3,228 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>小熊叮嚀（MediBuddy）隱私權政策</title>
+  <title>小熊叮嚀隱私權政策</title>
+  <meta name="description" content="小熊叮嚀的隱私權政策，說明提醒、語音輸入、記事與本機資料處理方式。">
   <style>
+    :root {
+      --bg: #fff8ef;
+      --paper: rgba(255, 255, 255, 0.92);
+      --ink: #35291f;
+      --subtle: #6f5a48;
+      --accent: #dd7a54;
+      --accent-soft: #ffe0cf;
+      --line: #efd7c5;
+      --shadow: 0 18px 50px rgba(101, 66, 36, 0.12);
+    }
+    * { box-sizing: border-box; }
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.8;
-      max-width: 860px;
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans TC", "PingFang TC", sans-serif;
+      line-height: 1.85;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, #ffe8d6 0, transparent 28%),
+        radial-gradient(circle at top right, #fff1c9 0, transparent 24%),
+        linear-gradient(180deg, #fffaf3 0%, var(--bg) 100%);
+      padding: 24px;
+    }
+    .shell {
+      max-width: 920px;
       margin: 0 auto;
-      padding: 32px 20px;
-      color: #222;
-      background: #fffaf2;
+    }
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 32px 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(4px);
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #8d4c2f;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-size: 0.92rem;
+      margin-bottom: 14px;
     }
     h1, h2 {
-      color: #3f3428;
+      margin: 0;
+      color: #2f241c;
     }
-    .updated {
-      color: #666;
-      font-size: 0.95rem;
+    h1 {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    h2 {
+      font-size: 1.28rem;
+      margin-top: 28px;
+      margin-bottom: 10px;
+    }
+    p, li {
+      font-size: 1.02rem;
+      color: var(--ink);
+    }
+    .updated, .lead {
+      color: var(--subtle);
+    }
+    .lead {
+      margin-top: 12px;
+      font-size: 1.05rem;
+    }
+    ul {
+      margin: 0;
+      padding-left: 1.4rem;
     }
     section {
+      padding-top: 6px;
+    }
+    .note {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: #fff3e7;
+      border: 1px solid #f6d7bd;
+      color: #7a5338;
+    }
+    a {
+      color: #b75532;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
+    }
+    footer {
       margin-top: 28px;
+      color: var(--subtle);
+      font-size: 0.95rem;
+    }
+    code {
+      font-family: "Cascadia Code", "Consolas", monospace;
+      background: #fff4eb;
+      padding: 0.1em 0.4em;
+      border-radius: 8px;
+    }
+    @media (max-width: 640px) {
+      body { padding: 14px; }
+      .card { padding: 24px 18px; border-radius: 22px; }
     }
   </style>
 </head>
 <body>
-  <h1>小熊叮嚀（MediBuddy）隱私權政策</h1>
-  <p class="updated">最後更新日期：2026 年 6 月 27 日</p>
+  <main class="shell">
+    <article class="card">
+      <div class="badge">小熊認真說明中</div>
+      <h1>小熊叮嚀隱私權政策</h1>
+      <p class="updated">更新日期：2026-06-29</p>
+      <p class="lead">歡迎使用小熊叮嚀。這是一款以裝置本機為主的生活提醒 App，幫您記下生活大小事，像是一般提醒、語音輸入、記事、備忘與簡易花費記錄。小熊會努力把提醒顧好，但在資料處理這件事上，我們還是想跟您說清楚、講明白。</p>
 
-  <section>
-    <h2>一、政策適用範圍</h2>
-    <p>
-      本隱私權政策適用於小熊叮嚀（MediBuddy）Android 應用程式。
-      小熊叮嚀是一款提供本機提醒、語音輸入、記事、生活紀錄、簡易花費紀錄與提醒解析功能的應用程式。
-    </p>
-  </section>
+      <section>
+        <h2>一、這份政策適用在哪裡</h2>
+        <p>本隱私權政策適用於小熊叮嚀 Android 應用程式，以及我們在 App 內提供的相關本機功能。</p>
+        <p>目前版本的小熊叮嚀以裝置端處理為主，不提供帳號登入、雲端同步、家屬端、遠端監控或由我們提供的跨裝置備份服務。</p>
+      </section>
 
-  <section>
-    <h2>二、開發者與聯絡方式</h2>
-    <p>
-      如您對本隱私權政策或資料處理方式有任何問題，請透過以下電子郵件聯絡我們：
-    </p>
-    <p>
-      <strong>聯絡信箱：</strong>coderb0418@gmail.com
-    </p>
-  </section>
+      <section>
+        <h2>二、我們可能處理哪些資料</h2>
+        <p>小熊叮嚀可能會在您的裝置上處理下列資料：</p>
+        <ul>
+          <li>您建立的提醒內容，例如事項、日期、時間、地點、分類與提醒狀態。</li>
+          <li>您輸入的記事、備忘、生活紀錄與簡易花費記錄。</li>
+          <li>您主動使用語音輸入時所說出的內容，以及語音辨識後產生的文字。</li>
+          <li>為了整理提醒內容而在裝置上解析的自然語言文字。</li>
+          <li>提醒排程、稍後提醒、完成狀態、通知觸發時間與重新排程所需資訊。</li>
+        </ul>
+      </section>
 
-  <section>
-    <h2>三、我們存取或處理的資料</h2>
-    <p>小熊叮嚀可能會在您的裝置上處理以下資料：</p>
-    <ul>
-      <li>您建立的提醒內容，例如事項、時間、地點、分類與提醒狀態。</li>
-      <li>您輸入的記事內容、生活紀錄與簡易花費紀錄。</li>
-      <li>您透過語音輸入功能說出的內容，以及語音辨識後產生的文字。</li>
-      <li>為了將自然語言內容整理成提醒資訊而在裝置上處理的文字內容。</li>
-      <li>提醒排程、稍後提醒、完成狀態、觸發時間與重新排程所需資訊。</li>
-    </ul>
-  </section>
+      <section>
+        <h2>三、資料如何儲存</h2>
+        <ul>
+          <li>目前版本的小熊叮嚀主要將資料保存在您的裝置本機。</li>
+          <li>App 會使用本機資料庫儲存提醒、記事、生活紀錄與花費記錄。</li>
+          <li>我們目前不提供帳號系統、雲端同步、遠端備份或自有伺服器資料託管功能。</li>
+          <li>依目前設計，提醒內容不會因一般使用而主動上傳到小熊叮嚀自有伺服器。</li>
+        </ul>
+      </section>
 
-  <section>
-    <h2>四、麥克風與語音辨識</h2>
-    <p>
-      小熊叮嚀會在您主動使用語音輸入功能時請求麥克風權限。
-      麥克風僅用於將您的語音內容轉換為文字，以協助建立提醒、記事或花費紀錄。
-    </p>
-    <p>
-      小熊叮嚀本身不會將您的語音內容上傳到我們自有的伺服器。
-      不過，語音轉文字功能可能由 Android 系統或裝置上的語音辨識服務處理；
-      實際處理方式可能依您的裝置、系統版本與語音服務提供者設定而有所不同，
-      並可能受該服務提供者的隱私權政策約束。
-    </p>
-  </section>
+      <section>
+        <h2>四、麥克風與語音輸入</h2>
+        <p>當您主動使用語音輸入功能時，小熊叮嚀會請求麥克風權限，用來將您的語音內容轉成文字，方便建立提醒、記事或花費記錄。</p>
+        <p>小熊叮嚀本身不會將您的錄音檔上傳到我們自有的伺服器，也不以自有服務保存錄音內容。不過，語音轉文字功能可能由 Android 系統或裝置上的語音服務處理；實際處理方式會依裝置、系統版本與服務提供者設定而有所不同，並可能受該服務提供者的隱私權政策約束。</p>
+      </section>
 
-  <section>
-    <h2>五、本機 AI 與文字解析</h2>
-    <p>
-      小熊叮嚀可能會使用裝置上的本機推論能力或隨 App 提供的本機模型，
-      將您輸入的自然語言內容解析為提醒資訊。
-    </p>
-    <p>
-      這類解析功能的目的，是協助您更快速建立提醒內容。
-      依目前設計，相關文字解析主要在您的裝置端完成，不會因本功能而上傳到我們自有的伺服器。
-    </p>
-  </section>
+      <section>
+        <h2>五、本機文字解析與本地 AI</h2>
+        <p>為了幫您更快建立提醒，小熊叮嚀可能會在裝置上解析您輸入的自然語言內容，例如把「明天下午兩點去京華城看電影」整理成提醒資訊。</p>
+        <p>依目前版本設計，這類文字解析主要在裝置端完成，不會因這項功能而把內容上傳到我們自有的伺服器。如果未來功能設計有明顯調整，我們會同步更新這份政策。</p>
+      </section>
 
-  <section>
-    <h2>六、本機儲存</h2>
-    <p>
-      小熊叮嚀目前主要將提醒、記事、生活紀錄與花費紀錄儲存在您的裝置本機。
-      我們目前不提供帳號登入、雲端同步或由我們提供的跨裝置備份功能。
-    </p>
-  </section>
+      <section>
+        <h2>六、App 權限與用途</h2>
+        <p>小熊叮嚀可能會使用下列權限：</p>
+        <ul>
+          <li>麥克風權限：用於語音輸入與語音辨識。</li>
+          <li>通知權限：用於顯示提醒通知與鬧鐘通知。</li>
+          <li>精確鬧鐘與開機啟動相關權限：用於準時提醒，以及在裝置重開機後恢復提醒排程。</li>
+          <li>前景服務、喚醒鎖、震動、音訊與音量相關權限：用於提醒響鈴、震動、語音播報與提醒期間的必要執行控制。</li>
+        </ul>
+        <p>這些權限僅用於提醒與相關功能運作，不用於廣告追蹤或行為分析。</p>
+      </section>
 
-  <section>
-    <h2>七、通知、鬧鐘與背景執行</h2>
-    <p>
-      小熊叮嚀會使用通知、鬧鐘、震動、前景服務、語音播報與必要的背景執行機制，
-      在您設定的時間提醒您。
-    </p>
-    <p>
-      為了降低漏提醒的機率，App 也可能在裝置重新開機後重新排程既有提醒。
-      這些功能僅用於提醒目的，不會用於廣告追蹤或行為分析。
-    </p>
-  </section>
+      <section>
+        <h2>七、通知、鬧鐘與背景執行</h2>
+        <p>小熊叮嚀會使用通知、鬧鐘、震動、語音播報、前景服務與必要的背景執行機制，在您設定的時間提醒您。</p>
+        <p>為了降低漏提醒的機率，App 也可能在裝置重新開機後重新排程既有提醒。這些機制的用途，是把提醒準時送到您面前，不是偷偷研究您的生活節奏。</p>
+      </section>
 
-  <section>
-    <h2>八、App 權限與用途</h2>
-    <ul>
-      <li><strong>麥克風權限：</strong>用於語音輸入與語音辨識。</li>
-      <li><strong>通知權限：</strong>用於顯示提醒通知與鬧鐘通知。</li>
-      <li><strong>精確鬧鐘與開機啟動相關權限：</strong>用於準時提醒，以及在裝置重開機後恢復提醒排程。</li>
-      <li><strong>震動、前景服務、喚醒鎖與音訊設定相關權限：</strong>用於提醒響鈴、震動、語音播報及提醒期間的必要執行控制。</li>
-    </ul>
-  </section>
+      <section>
+        <h2>八、資料分享與第三方服務</h2>
+        <p>小熊叮嚀不會出售您的個人資料。</p>
+        <p>依目前版本設計，我們不會主動將您的提醒、記事、生活紀錄或花費記錄分享給第三方。第一版也不包含第三方廣告 SDK，不使用自有服務進行使用者行為分析或廣告追蹤。</p>
+        <p>不過，如果您使用裝置系統提供的語音辨識、文字轉語音或其他系統級服務，該服務可能依其自身政策處理相關資料。建議您另外查看裝置、作業系統或相關服務提供者的隱私權設定與政策。</p>
+      </section>
 
-  <section>
-    <h2>九、資料分享與第三方處理</h2>
-    <p>
-      小熊叮嚀不會出售您的個人資料。
-      目前我們不會將您的提醒、記事、花費紀錄或生活紀錄主動分享給第三方。
-    </p>
-    <p>
-      若您使用裝置系統提供的語音辨識、文字轉語音或其他系統級服務，
-      該服務可能依其自身政策處理相關資料。
-      建議您另外查看裝置、作業系統或服務提供者的隱私權設定與政策。
-    </p>
-  </section>
+      <section>
+        <h2>九、資料保存與刪除</h2>
+        <p>您建立的提醒、記事、生活紀錄與花費記錄，會保存在您的裝置上，直到您自行在 App 內刪除，或解除安裝小熊叮嚀為止。</p>
+        <p>解除安裝 App 後，儲存在裝置本機的應用程式資料通常會一併移除，但實際結果仍可能依裝置或系統機制而有所不同。</p>
+      </section>
 
-  <section>
-    <h2>十、不含廣告、分析與追蹤</h2>
-    <p>
-      依目前版本設計，小熊叮嚀不含第三方廣告 SDK，也不以我們自有服務進行使用者行為分析或廣告追蹤。
-    </p>
-  </section>
+      <section>
+        <h2>十、資料安全</h2>
+        <p>小熊叮嚀會使用 Android 系統提供的應用程式資料儲存機制，將資料保存在應用程式可存取的本機區域。我們建議您妥善保管自己的裝置，並開啟螢幕鎖定與必要的系統安全設定，讓小熊顧提醒時，您的裝置也有好好顧自己。</p>
+      </section>
 
-  <section>
-    <h2>十一、資料保存與刪除</h2>
-    <p>
-      您建立的提醒、記事、生活紀錄與花費紀錄會保存在您的裝置上，直到您在 App 內刪除，
-      或解除安裝小熊叮嚀為止。
-    </p>
-    <p>
-      解除安裝 App 通常會移除儲存在裝置本機的應用程式資料，實際結果仍可能依裝置或系統機制而有所不同。
-    </p>
-  </section>
+      <section>
+        <h2>十一、服務邊界與功能限制</h2>
+        <p>小熊叮嚀提供一般提醒、記事、生活紀錄與簡易花費記錄功能，不提供專業建議，也不是照護、監控或緊急救援服務。</p>
+        <div class="note">如果您遇到需要立即協助的情況，請直接聯絡家人、當地服務窗口或相關緊急支援單位。</div>
+      </section>
 
-  <section>
-    <h2>十二、資料安全</h2>
-    <p>
-      小熊叮嚀採用 Android 系統提供的應用程式資料儲存機制，
-      將資料保存在應用程式可存取的本機資料區域。
-      請您妥善保管自己的裝置、螢幕鎖定與系統安全設定。
-    </p>
-  </section>
+      <section>
+        <h2>十二、兒童隱私</h2>
+        <p>小熊叮嚀並非專為兒童設計，我們也不會刻意向兒童收集個人資料。</p>
+      </section>
 
-  <section>
-    <h2>十三、醫療聲明</h2>
-    <p>
-      小熊叮嚀僅提供提醒與紀錄功能，不提供醫療診斷、治療建議或用藥判斷。
-      關於吃藥、症狀、治療或健康問題，請依照醫師、藥師或合格醫療專業人員的說明。
-      如遇緊急狀況，請立即聯絡家人、醫療院所或撥打當地緊急電話。
-    </p>
-  </section>
+      <section>
+        <h2>十三、聯絡方式</h2>
+        <p>如果您對本隱私權政策或資料處理方式有任何問題，可以透過以下方式聯絡我們：</p>
+        <ul>
+          <li>聯絡信箱：<a href="mailto:coderb0418@gmail.com">coderb0418@gmail.com</a></li>
+        </ul>
+      </section>
 
-  <section>
-    <h2>十四、兒童隱私</h2>
-    <p>
-      小熊叮嚀並非專為兒童設計，也不會刻意向兒童收集個人資料。
-    </p>
-  </section>
+      <section>
+        <h2>十四、政策更新</h2>
+        <p>如果小熊叮嚀的功能、資料處理方式、上架要求或法規需求有重大調整，我們可能會更新本政策內容。更新後的版本會同步調整本頁的更新日期，並在需要時提供新版說明。</p>
+      </section>
 
-  <section>
-    <h2>十五、政策更新</h2>
-    <p>
-      我們可能會因功能調整、法規要求或上架平台要求而更新本隱私權政策。
-      更新後的版本會公布於本頁面，並更新頁面上的最後更新日期。
-    </p>
-  </section>
+      <footer>
+        這份頁面可作為 GitHub Pages 公開版隱私政策使用，網址維持 <code>https://gale0418.github.io/Gale0418-medibuddy-privacy/</code> 即可。
+      </footer>
+    </article>
+  </main>
 </body>
 </html>
