@@ -4,112 +4,68 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>小熊叮嚀隱私權政策</title>
-  <meta name="description" content="小熊叮嚀的隱私權政策，說明提醒、語音輸入、記事與本機資料處理方式。">
+  <meta name="description" content="小熊叮嚀隱私權政策，說明本機資料、Email 共享及 Google Play 訂閱的資料處理方式。">
   <style>
     :root {
       --bg: #fff8ef;
-      --paper: rgba(255, 255, 255, 0.92);
+      --paper: #ffffff;
       --ink: #35291f;
       --subtle: #6f5a48;
-      --accent: #dd7a54;
+      --accent: #b75532;
       --accent-soft: #ffe0cf;
       --line: #efd7c5;
-      --shadow: 0 18px 50px rgba(101, 66, 36, 0.12);
+      --note: #fff3e7;
+      --link: #9d4026;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: "Segoe UI", "Noto Sans TC", "PingFang TC", sans-serif;
-      line-height: 1.85;
+      line-height: 1.8;
       color: var(--ink);
-      background:
-        radial-gradient(circle at top left, #ffe8d6 0, transparent 28%),
-        radial-gradient(circle at top right, #fff1c9 0, transparent 24%),
-        linear-gradient(180deg, #fffaf3 0%, var(--bg) 100%);
+      background: var(--bg);
       padding: 24px;
     }
-    .shell {
-      max-width: 920px;
-      margin: 0 auto;
-    }
+    .shell { max-width: 920px; margin: 0 auto; }
     .card {
       background: var(--paper);
       border: 1px solid var(--line);
-      border-radius: 28px;
+      border-radius: 8px;
       padding: 32px 28px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(4px);
+      box-shadow: 0 12px 36px rgba(101, 66, 36, 0.1);
     }
     .badge {
       display: inline-block;
-      padding: 6px 12px;
-      border-radius: 999px;
+      padding: 5px 10px;
+      border-radius: 6px;
       background: var(--accent-soft);
-      color: #8d4c2f;
+      color: #7c3e27;
       font-weight: 700;
-      letter-spacing: 0.04em;
       font-size: 0.92rem;
       margin-bottom: 14px;
     }
-    h1, h2 {
-      margin: 0;
-      color: #2f241c;
-    }
-    h1 {
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      line-height: 1.2;
-      margin-bottom: 12px;
-    }
-    h2 {
-      font-size: 1.28rem;
-      margin-top: 28px;
-      margin-bottom: 10px;
-    }
-    p, li {
-      font-size: 1.02rem;
-      color: var(--ink);
-    }
-    .updated, .lead {
-      color: var(--subtle);
-    }
-    .lead {
-      margin-top: 12px;
-      font-size: 1.05rem;
-    }
-    ul {
-      margin: 0;
-      padding-left: 1.4rem;
-    }
-    section {
-      padding-top: 6px;
-    }
+    h1, h2 { color: #2f241c; letter-spacing: 0; }
+    h1 { margin: 0 0 12px; font-size: 2.4rem; line-height: 1.25; }
+    h2 { margin: 30px 0 10px; font-size: 1.28rem; }
+    p, li { font-size: 1.02rem; }
+    .updated, .lead { color: var(--subtle); }
+    .lead { margin-top: 12px; font-size: 1.05rem; }
+    ul { margin: 0; padding-left: 1.4rem; }
     .note {
       margin-top: 18px;
       padding: 14px 16px;
-      border-radius: 18px;
-      background: #fff3e7;
-      border: 1px solid #f6d7bd;
-      color: #7a5338;
-    }
-    a {
-      color: #b75532;
-      text-decoration-thickness: 2px;
-      text-underline-offset: 3px;
-    }
-    footer {
-      margin-top: 28px;
-      color: var(--subtle);
-      font-size: 0.95rem;
-    }
-    code {
-      font-family: "Cascadia Code", "Consolas", monospace;
-      background: #fff4eb;
-      padding: 0.1em 0.4em;
       border-radius: 8px;
+      background: var(--note);
+      border: 1px solid #f6d7bd;
+      color: #6f4932;
     }
+    a { color: var(--link); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+    footer { margin-top: 32px; color: var(--subtle); font-size: 0.95rem; }
+    code { font-family: "Cascadia Code", "Consolas", monospace; background: #fff4eb; padding: 0.1em 0.4em; border-radius: 4px; }
     @media (max-width: 640px) {
-      body { padding: 14px; }
-      .card { padding: 24px 18px; border-radius: 22px; }
+      body { padding: 12px; }
+      .card { padding: 24px 18px; }
+      h1 { font-size: 2rem; }
     }
   </style>
 </head>
@@ -118,114 +74,122 @@
     <article class="card">
       <div class="badge">小熊認真說明中</div>
       <h1>小熊叮嚀隱私權政策</h1>
-      <p class="updated">更新日期：2026-06-29</p>
-      <p class="lead">歡迎使用小熊叮嚀。這是一款以裝置本機為主的生活提醒 App，幫您記下生活大小事，像是一般提醒、語音輸入、記事、備忘與簡易花費記錄。小熊會努力把提醒顧好，但在資料處理這件事上，我們還是想跟您說清楚、講明白。</p>
+      <p class="updated">更新日期：2026-07-27</p>
+      <p class="lead">小熊叮嚀是一款以裝置本機為主的生活提醒 App。這份政策說明本機功能、選填的 Email 共享、推薦邀請與 Google Play 訂閱會如何處理資料。</p>
 
       <section>
-        <h2>一、這份政策適用在哪裡</h2>
-        <p>本隱私權政策適用於小熊叮嚀 Android 應用程式，以及我們在 App 內提供的相關本機功能。</p>
-        <p>目前版本的小熊叮嚀為單機個人應用，所有資料皆以裝置端處理為主，不提供帳號登入、雲端同步、多用戶協作或跨裝置連線服務。</p>
+        <h2>一、適用範圍</h2>
+        <p>本政策適用於小熊叮嚀 Android 應用程式、Email 共享通知、推薦邀請、Google Play 訂閱驗證，以及相關的公開網頁與後端服務。</p>
+        <p>App 不提供自有帳號登入、一般雲端同步或跨裝置備份。多數提醒、記事與花費資料只保存在使用者裝置上。</p>
       </section>
 
       <section>
-        <h2>二、我們可能處理哪些資料</h2>
-        <p>小熊叮嚀可能會在您的裝置上處理下列資料：</p>
+        <h2>二、裝置本機處理的資料</h2>
         <ul>
-          <li>您建立的提醒內容，例如事項、日期、時間、地點、分類與提醒狀態。</li>
-          <li>您輸入的記事、備忘、生活紀錄與簡易花費記錄。</li>
-          <li>您主動使用語音輸入時所說出的內容，以及語音辨識後產生的文字。</li>
-          <li>為了整理提醒內容而在裝置上解析的自然語言文字。</li>
-          <li>提醒排程、稍後提醒、完成狀態、通知觸發時間與重新排程所需資訊。</li>
+          <li>使用者建立的提醒、日期、時間、地點、分類與完成狀態。</li>
+          <li>使用者輸入的記事、備忘、生活紀錄與簡易花費記錄。</li>
+          <li>使用者主動啟用語音輸入時的語音，以及辨識後的文字。</li>
+          <li>提醒排程、稍後提醒、通知觸發與重新排程所需資訊。</li>
+          <li>在裝置上進行文字整理時所需的輸入內容。</li>
+        </ul>
+        <p>上述自由輸入內容不會因一般使用而上傳到小熊叮嚀後端，也不會放入 Email 通知。</p>
+      </section>
+
+      <section>
+        <h2>三、選填的 Email 共享</h2>
+        <p>只有使用者主動設定並驗證收件人時，App 才會使用 Email 共享。這項功能會處理：</p>
+        <ul>
+          <li>使用者提供的收件人 Email。</li>
+          <li>App 隨機產生的安裝識別碼。</li>
+          <li>Email 驗證狀態、通知偏好與設定時間。</li>
+          <li>事項識別碼、事件類型、排定時間、發生時間及寄送狀態等最小事件中繼資料。</li>
+        </ul>
+        <p>Email 內容只提供一般提示與週摘要，不包含提醒標題、記事、花費內容、備註或其他自由輸入文字。</p>
+      </section>
+
+      <section>
+        <h2>四、Google Play 訂閱</h2>
+        <p>若使用者購買訂閱，付款方式、帳單與交易由 Google Play 處理，小熊叮嚀不會取得或保存信用卡、銀行帳戶或完整付款資料。</p>
+        <p>為了確認訂閱權限，App 會將 Google Play 提供的購買憑證與隨機安裝識別碼傳送至後端。後端向 Google Play 驗證後，只保存購買憑證的單向雜湊、商品與方案識別碼、訂閱狀態、到期時間及最近驗證時間，不保存原始購買憑證。</p>
+        <p>Google Play Integrity 可能提供防止濫用所需的驗證信號。驗證失敗時，系統不會以本機旗標直接開啟付費權限。</p>
+      </section>
+
+      <section>
+        <h2>五、推薦邀請</h2>
+        <p>使用者主動建立或開啟推薦邀請時，服務會使用隨機邀請代碼、安裝識別碼的雜湊、邀請與完成時間，以及獎勵到期時間。推薦連結不包含姓名、Email 或提醒內容。</p>
+        <p>推薦邀請與獎勵不是目前付費方案的保證內容，功能是否開放以 App 當下顯示為準。</p>
+      </section>
+
+      <section>
+        <h2>六、第三方服務與處理者</h2>
+        <ul>
+          <li>Cloudflare Workers 與 D1：處理 Email 共享設定、最小事件中繼資料、限流、推薦邀請及訂閱權益快取。</li>
+          <li>Google Apps Script 與 Gmail：依我們的指示寄送驗證碼、測試信與一般共享通知。</li>
+          <li>Google Play：處理付款、訂閱交易、訂閱狀態、Play Integrity 與相關驗證。</li>
+          <li>Android 系統或裝置語音服務：使用者主動啟用語音輸入或文字轉語音時，可能依裝置設定處理相關資料。</li>
+        </ul>
+        <p>小熊叮嚀不會出售個人資料，不使用第三方廣告 SDK，也不將上述資料用於廣告追蹤。</p>
+      </section>
+
+      <section>
+        <h2>七、App 權限</h2>
+        <ul>
+          <li>麥克風：供使用者主動進行語音輸入。</li>
+          <li>通知：顯示使用者建立的提醒。</li>
+          <li>精確鬧鐘與開機啟動：準時提醒，並在裝置重新開機後恢復排程。</li>
+          <li>前景服務、喚醒鎖、震動與音訊控制：在提醒期間提供必要的響鈴、震動與播報。</li>
+          <li>網路：供選填的 Email 共享、推薦邀請、訂閱驗證及公開頁面連線。</li>
         </ul>
       </section>
 
       <section>
-        <h2>三、資料如何儲存</h2>
+        <h2>八、資料保存與刪除</h2>
         <ul>
-          <li>目前版本的小熊叮嚀主要將資料保存在您的裝置本機。</li>
-          <li>App 會使用本機資料庫儲存提醒、記事、生活紀錄與花費記錄。</li>
-          <li>我們目前不提供帳號系統、雲端同步、遠端備份或自有伺服器資料託管功能。</li>
-          <li>依目前設計，提醒內容不會因一般使用而主動上傳到小熊叮嚀自有伺服器。</li>
+          <li>本機提醒、記事與花費資料會保留在裝置上，直到使用者在 App 內刪除或解除安裝。</li>
+          <li>Email 共享設定、事件與寄送紀錄會保留到使用者停止共享或更換收件人；App 會向後端要求刪除該安裝識別碼下的收件人、事件與寄送資料。</li>
+          <li>驗證碼只保存不可還原的驗證雜湊，驗證成功或到期後會清除。</li>
+          <li>推薦邀請到期後會失效；推薦 claim 與獎勵紀錄只保存雜湊識別碼及必要時間，並依服務設定清理。</li>
+          <li>訂閱權益紀錄會在確認購買、處理取消、退款、到期、防止重複領取與履行法定義務所需期間內保存。</li>
+          <li>限流與安全紀錄會在防止濫用及維持服務所需期間內保存。</li>
         </ul>
+        <p>使用者可在 App 內停止 Email 共享。需要查詢或刪除其他後端資料時，可使用本頁聯絡方式提出申請。</p>
       </section>
 
       <section>
-        <h2>四、麥克風與語音輸入</h2>
-        <p>當您主動使用語音輸入功能時，小熊叮嚀會請求麥克風權限，用來將您的語音內容轉成文字，方便建立提醒、記事或花費記錄。</p>
-        <p>小熊叮嚀本身不會將您的錄音檔上傳到我們自有的伺服器，也不以自有服務保存錄音內容。不過，語音轉文字功能可能由 Android 系統或裝置上的語音服務處理；實際處理方式會依裝置、系統版本與服務提供者設定而有所不同，並可能受該服務提供者的隱私權政策約束。</p>
+        <h2>九、資料安全</h2>
+        <p>後端連線使用 HTTPS。購買憑證、驗證碼與推薦安裝識別碼會以雜湊或等效方式降低直接識別風險。服務也使用速率限制與收件人驗證，降低未經授權寄送或濫用。</p>
+        <p>任何系統都無法保證絕對安全。請妥善保管裝置並使用螢幕鎖定；若發現異常，請立即聯絡我們。</p>
       </section>
 
       <section>
-        <h2>五、本機文字解析與本地 AI</h2>
-        <p>為了幫您更快建立提醒，小熊叮嚀可能會在裝置上解析您輸入的自然語言內容，例如把「明天下午兩點去京華城看電影」整理成提醒資訊。</p>
-        <p>依目前版本設計，這類文字解析主要在裝置端完成，不會因這項功能而把內容上傳到我們自有的伺服器。如果未來功能設計有明顯調整，我們會同步更新這份政策。</p>
+        <h2>十、使用者選擇</h2>
+        <p>不設定 Email、不使用推薦邀請或不購買訂閱，仍可使用 App 的免費本機核心功能。Email 與裝置識別碼的後端收集屬選填，使用者可停止 Email 共享。</p>
       </section>
 
       <section>
-        <h2>六、App 權限與用途</h2>
-        <p>小熊叮嚀可能會使用下列權限：</p>
-        <ul>
-          <li>麥克風權限：用於語音輸入與語音辨識。</li>
-          <li>通知權限：用於顯示提醒通知與鬧鐘通知。</li>
-          <li>精確鬧鐘與開機啟動相關權限：用於準時提醒，以及在裝置重開機後恢復提醒排程。</li>
-          <li>前景服務、喚醒鎖、震動、音訊與音量相關權限：用於提醒響鈴、震動、語音播報與提醒期間的必要執行控制。</li>
-        </ul>
-        <p>這些權限僅用於提醒與相關功能運作，不用於廣告追蹤或行為分析。</p>
-      </section>
-
-      <section>
-        <h2>七、通知、鬧鐘與背景執行</h2>
-        <p>小熊叮嚀會使用通知、鬧鐘、震動、語音播報、前景服務與必要的背景執行機制，在您設定的時間提醒您。</p>
-        <p>為了降低漏提醒的機率，App 也可能在裝置重新開機後重新排程既有提醒。這些機制的用途，是把提醒準時送到您面前，不是偷偷研究您的生活節奏。</p>
-      </section>
-
-      <section>
-        <h2>八、資料分享與第三方服務</h2>
-        <p>小熊叮嚀不會出售您的個人資料。</p>
-        <p>依目前版本設計，我們不會主動將您的提醒、記事、生活紀錄或花費記錄分享給第三方。第一版也不包含第三方廣告 SDK，不使用自有服務進行使用者行為分析或廣告追蹤。</p>
-        <p>不過，如果您使用裝置系統提供的語音辨識、文字轉語音或其他系統級服務，該服務可能依其自身政策處理相關資料。建議您另外查看裝置、作業系統或相關服務提供者的隱私權設定與政策。</p>
-      </section>
-
-      <section>
-        <h2>九、資料保存與刪除</h2>
-        <p>您建立的提醒、記事、生活紀錄與花費記錄，會保存在您的裝置上，直到您自行在 App 內刪除，或解除安裝小熊叮嚀為止。</p>
-        <p>解除安裝 App 後，儲存在裝置本機的應用程式資料通常會一併移除，但實際結果仍可能依裝置或系統機制而有所不同。</p>
-      </section>
-
-      <section>
-        <h2>十、資料安全</h2>
-        <p>小熊叮嚀會使用 Android 系統提供的應用程式資料儲存機制，將資料保存在應用程式可存取的本機區域。我們建議您妥善保管自己的裝置，並開啟螢幕鎖定與必要的系統安全設定，讓小熊顧提醒時，您的裝置也有好好顧自己。</p>
-      </section>
-
-      <section>
-        <h2>十一、服務邊界與功能限制</h2>
-        <p>小熊叮嚀提供一般提醒、記事、生活紀錄與簡易花費記錄功能，定位為日常生活整理工具。</p>
-        <div class="note">如果您有需要即時協助或必須另外確認的重要事項，請直接使用電話、通訊軟體或其他適合您的聯絡方式。</div>
-      </section>
-
-      <section>
-        <h2>十二、兒童隱私</h2>
+        <h2>十一、兒童隱私</h2>
         <p>小熊叮嚀並非專為兒童設計，我們也不會刻意向兒童收集個人資料。</p>
       </section>
 
       <section>
-        <h2>十三、聯絡方式</h2>
-        <p>如果您對本隱私權政策或資料處理方式有任何問題，可以透過以下方式聯絡我們：</p>
+        <h2>十二、聯絡方式</h2>
+        <p>如需詢問資料處理、停止共享或提出刪除申請，請聯絡：</p>
         <ul>
-          <li>聯絡信箱：<a href="mailto:coderb0418@gmail.com">coderb0418@gmail.com</a></li>
+          <li>Email：<a href="mailto:coderb0418@gmail.com">coderb0418@gmail.com</a></li>
         </ul>
       </section>
 
       <section>
-        <h2>十四、政策更新</h2>
-        <p>如果小熊叮嚀的功能、資料處理方式、上架要求或法規需求有重大調整，我們可能會更新本政策內容。更新後的版本會同步調整本頁的更新日期，並在需要時提供新版說明。</p>
+        <h2>十三、政策更新</h2>
+        <p>當 App 功能、資料處理方式、第三方服務或上架要求有重大變更時，我們會更新本政策及頁面日期。重大變更會在適當情況下於 App 或商店頁提供說明。</p>
       </section>
 
+      <div class="note">小熊叮嚀是一般生活提醒工具。對於必須即時確認的重要事項，請同時使用電話、通訊軟體或其他合適的聯絡方式。</div>
+
       <footer>
-        這份頁面可作為 GitHub Pages 公開版隱私政策使用，網址維持 <code>https://gale0418.github.io/Gale0418-medibuddy-privacy/</code> 即可。
+        公開政策網址：<code>https://gale0418.github.io/Gale0418-medibuddy-privacy/</code>
       </footer>
     </article>
   </main>
 </body>
 </html>
-
