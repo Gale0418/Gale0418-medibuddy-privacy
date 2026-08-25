@@ -8,4 +8,6 @@
 
 支援頁面：https://gale0418.github.io/Gale0418-medibuddy-privacy/support.html
 
+第三方音效聲明：https://gale0418.github.io/Gale0418-medibuddy-privacy/third-party-notices.html
+
 Privacy policy page for 小熊叮嚀, a local-first iOS and Android everyday reminder app with optional remote services, support reports, and platform-store subscription verification when offered.
