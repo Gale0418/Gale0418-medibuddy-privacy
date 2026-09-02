@@ -1,0 +1,96 @@
+name: Current privacy policy repair
+
+on:
+  push:
+    paths:
+      - '.github/workflows/privacy-policy-fix.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Align policy with current MediBuddy release contract
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          p = Path('index.html')
+          text = p.read_text(encoding='utf-8')
+
+          def repl(old, new, expected=1):
+              global text
+              count = text.count(old)
+              if count != expected:
+                  raise SystemExit(f'expected {expected}, found {count}: {old[:100]!r}')
+              text = text.replace(old, new, expected)
+
+          repl('<p class="updated">更新日期：2026-08-22</p>', '<p class="updated">更新日期：2026-09-02</p>')
+
+          repl(
+            '<section><h2>三、選填的 Email 共享</h2><p>只有使用者主動設定並驗證收件人時，App 才會使用 Email 共享。這項功能會處理：</p><ul><li>使用者提供的收件人 Email。</li><li>App 隨機產生的安裝識別碼。</li><li>Email 驗證狀態、通知偏好與設定時間。</li><li>事項識別碼、事件類型、排定時間、發生時間及寄送狀態等最小事件中繼資料。</li></ul><p>Email 內容只提供一般提示與週摘要，不包含提醒標題、記事、花費內容、備註或其他自由輸入文字。</p></section>',
+            '<section><h2>三、選填的 Email 共享</h2><p>只有使用者主動設定並驗證收件人時，App 才會使用 Email 共享。這項功能會處理：</p><ul><li>使用者提供的收件人 Email。</li><li>App 隨機產生的安裝識別碼，以及用於安全與限流的不可直接還原雜湊。</li><li>Email 驗證狀態、通知偏好、設定時間與最後一次成功 App activity 的技術時間。</li><li>寄送驗證碼、測試信與「連續 48 小時未開啟 App」通知所需的最小寄送狀態與去識別化診斷。</li></ul><p>現行 Email Policy V2 不讀取提醒到期事件、未確認數量或週摘要，也不傳送提醒標題、記事、地點、花費、語音文字或其他自由輸入內容。連續 48 小時未使用的每一段 episode 最多寄送一次固定的一般提示；重新開啟 App 會結束該段 episode。</p></section>'
+          )
+
+          repl(
+            '<section><h2>六、推薦邀請</h2><p>使用者主動建立或開啟推薦邀請時，服務會使用隨機邀請代碼、安裝識別碼的雜湊、邀請與完成時間，以及獎勵到期時間。推薦連結不包含姓名、Email 或提醒內容。</p><p>推薦邀請與獎勵不是目前付費方案的保證內容，功能是否開放以 App 當下顯示為準。</p></section>',
+            '<section><h2>六、推薦邀請</h2><p>使用者主動建立或開啟推薦邀請時，服務會使用隨機邀請代碼、安裝識別碼的不可直接還原雜湊、claim 時間、商店驗證後的實付資格時間、去識別化交易雜湊，以及獎勵到期時間。推薦連結不包含姓名、Email、提醒、記事、地點或花費內容；後端不保存用於推薦資格的原始商店 transaction／order identifier。</p><p>邀請連結建立後最長一年有效，可分享給多位親友；每台受邀裝置只能成功 claim 一次。安裝、開始免費試用、完成提醒或僅完成 claim 都不會發放推薦獎勵；只有 claim 之後由 Apple App Store 或 Google Play 後端驗證到該受邀安裝的首筆非零實際付款，雙方才各增加 30 天，預存延長累積最高 180 天。重送同一交易或通知不得重複發獎。</p></section>'
+          )
+
+          repl(
+            '<section><h2>七、第三方服務與處理者</h2><ul><li>Cloudflare Workers 與 D1：在使用者使用對應功能時，處理 Email 共享設定、最小事件中繼資料、限流、推薦邀請、問題回報及訂閱權益快取。</li>',
+            '<section><h2>七、第三方服務與處理者</h2><ul><li>Cloudflare Workers 與 D1：在使用者使用對應功能時，處理 Email 共享設定與最後 App activity 等最小技術中繼資料、限流、推薦邀請／資格／獎勵、問題回報及訂閱權益驗證快取。</li>'
+          )
+
+          repl(
+            '<li>Email 共享設定、事件與寄送紀錄會保留到使用者停止共享或更換收件人；App 會向後端要求刪除該安裝識別碼下的收件人、事件與寄送資料。</li>',
+            '<li>Email 共享設定、最後 App activity 與必要寄送狀態會依功能所需保存；停止共享或更換收件人時，App 會要求後端撤銷對應收件設定。Email delivery diagnostics 最多保存 90 天；現行 Policy V2 不建立週摘要或提醒事件內容的共享紀錄。</li>'
+          )
+
+          repl(
+            '<li>推薦邀請到期後會失效；推薦 claim 與獎勵紀錄只保存雜湊識別碼及必要時間，並依服務設定清理。</li>',
+            '<li>推薦邀請最長 365 天後失效。為避免同一受邀安裝重複 claim／重複發獎，服務會保留必要的雜湊 claim marker、資格／獎勵時間與去識別化交易雜湊；不保存推薦用原始商店 transaction／order identifier。</li>'
+          )
+
+          repl(
+            '<p>目前提供的遠端共享通道只有 Email。LINE 與 SMS 通知尚未提供，也不屬於目前訂閱的付費承諾；LINE 僅可能出現在 Android 系統分享面板中，由使用者自行選擇是否用來傳送推薦連結。</p>',
+            '<p>目前提供的遠端共享通知通道只有 Email。LINE 與 SMS 自動通知尚未提供，也不屬於目前訂閱的付費承諾；LINE 可由使用者在 iOS 或 Android 系統分享面板中自行選擇，用來傳送不含私人提醒內容的推薦連結。</p>'
+          )
+
+          p.write_text(text, encoding='utf-8')
+
+          readme = Path('README.md')
+          r = readme.read_text(encoding='utf-8')
+          old = '目前政策涵蓋 iOS 與 Android 的裝置本機資料、選填遠端服務、問題回報、推薦邀請與平台商店訂閱驗證。各功能是否提供，以使用者目前安裝版本的 App 畫面為準。LINE 與 SMS 通知尚未提供，也不屬於目前訂閱的付費承諾。'
+          new = '目前政策涵蓋 iOS 與 Android 的裝置本機資料、Email Policy V2（連續 48 小時未開 App 的固定通知）、問題回報、推薦邀請、首筆非零實付資格與平台商店訂閱驗證。各功能是否提供，以使用者目前安裝版本的 App 畫面為準。LINE 與 SMS 自動通知尚未提供；LINE 僅可由使用者透過系統分享面板自行傳送推薦連結。'
+          if r.count(old) != 1:
+              raise SystemExit('README policy summary anchor mismatch')
+          readme.write_text(r.replace(old, new, 1), encoding='utf-8')
+
+          # Self-remove after successful transformation.
+          Path('.github/workflows/privacy-policy-fix.yml').unlink()
+          PY
+
+          grep -q '更新日期：2026-09-02' index.html
+          grep -q '現行 Email Policy V2 不讀取提醒到期事件' index.html
+          grep -q '首筆非零實際付款' index.html
+          grep -q 'iOS 或 Android 系統分享面板' index.html
+          git diff --check
+
+      - name: Commit directly to privacy main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "docs: align privacy policy with current sharing release"
+          git push origin HEAD:main
